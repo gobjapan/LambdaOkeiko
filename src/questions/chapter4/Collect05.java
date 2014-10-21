@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Collect05 {
 
@@ -13,6 +14,13 @@ public class Collect05 {
                 
         Map<String, List<String>> groups = groupWords(words);
         System.out.println(groups);
+        
+        System.out.println(groupWords_answer(words));
+    }
+    
+    private Map<String, List<String>> groupWords_answer(List<String> words) {
+        return words.stream()
+                .collect(Collectors.groupingBy(word -> word.substring(0, 1)));
     }
     
     private Map<String, List<String>> groupWords(List<String> words) {

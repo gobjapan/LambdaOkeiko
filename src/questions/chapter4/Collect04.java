@@ -2,6 +2,7 @@ package questions.chapter4;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Collect04 {
 
@@ -10,6 +11,14 @@ public class Collect04 {
                 
         String joinedText = joinText(texts);
         System.out.println(joinedText);
+        
+        System.out.println(joinText_answer(texts));
+    }
+    
+    private String joinText_answer(List<String> texts) {
+
+        return texts.stream()
+                .collect(Collectors.joining());
     }
     
     private String joinText(List<String> texts) {
