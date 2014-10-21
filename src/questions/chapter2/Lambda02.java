@@ -14,7 +14,6 @@ public class Lambda02 {
 
     public Lambda02() {
         test();
-        answer();
     }
     
     private void test() {
@@ -25,24 +24,6 @@ public class Lambda02 {
                 return Files.readAllLines(path);
             }
         };
-        
-        ExecutorService service = Executors.newFixedThreadPool(1);
-        
-        Future<List<String>> future = service.submit(task);
-        
-        try {
-            List<String> contents = future.get();
-            System.out.println(contents);
-        } catch (InterruptedException ex) {
-        } catch (ExecutionException ex) {
-            System.err.println("Fail execution!");
-        }
-        
-        service.shutdown();
-    }
-    
-    private void answer() {
-        Callable<List<String>> task = () -> Files.readAllLines(Paths.get("README.md"));
         
         ExecutorService service = Executors.newFixedThreadPool(1);
         

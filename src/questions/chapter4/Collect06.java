@@ -1,6 +1,5 @@
 package questions.chapter4;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -11,16 +10,16 @@ public class Collect06 {
     public Collect06() {
         List<String> words = Arrays.asList("Java", "JavaScript", "Pearl", "Ruby", "PHP");
                 
-        Map<String, Integer> groups = groupWords(words);
+        Map<String, Long> groups = groupWords(words);
         System.out.println(groups);
     }
     
-    private Map<String, Integer> groupWords(List<String> words) {
-        Map<String, Integer> groups = new HashMap<>();
+    private Map<String, Long> groupWords(List<String> words) {
+        Map<String, Long> groups = new HashMap<>();
         
         for (String word: words) {
             String key = word.substring(0, 1);
-            Integer count = groups.getOrDefault(key, 0);
+            Long count = groups.getOrDefault(key, 0L);
             count++;
             groups.put(key, count);
         }
