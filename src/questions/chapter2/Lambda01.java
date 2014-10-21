@@ -6,6 +6,7 @@ public class Lambda01 {
 
     public Lambda01() {
         test();
+        answer();
     }
     
     private void test() {
@@ -15,6 +16,14 @@ public class Lambda01 {
                 return Integer.compare(x, y);
             }
         };
+        
+        System.out.println(comparator.compare(20, 10));
+        System.out.println(comparator.compare(20, 20));
+        System.out.println(comparator.compare(5, 20));
+    }
+    
+    private void answer() {
+        Comparator<Integer> comparator = (x, y) -> Integer.compare(x, y);
         
         System.out.println(comparator.compare(20, 10));
         System.out.println(comparator.compare(20, 20));

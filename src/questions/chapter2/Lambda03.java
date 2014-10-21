@@ -15,16 +15,13 @@ public class Lambda03 {
     }
     
     private void test() {
-        Runnable task = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Path path = Paths.get("README.md");
-                    List<String> contents =  Files.readAllLines(path);
-                    System.out.println(contents);
-                } catch (IOException ex) {
-                    System.err.println("Fail Read.");
-                }
+        Runnable task = () -> {
+            try {
+                Path path = Paths.get("README.md");
+                List<String> contents =  Files.readAllLines(path);
+                System.out.println(contents);
+            } catch (IOException ex) {
+                System.err.println("Fail Read.");
             }
         };
         
