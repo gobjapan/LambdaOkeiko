@@ -23,7 +23,8 @@ public class Lambda01 {
     }
     
     private void answer() {
-        Comparator<Integer> comparator = (x, y) -> Integer.compare(x, y);
+        //Comparator<Integer> comparator = (x, y) -> Integer.compare(x, y);
+        Comparator<Integer> comparator = Integer::compare;
         
         System.out.println(comparator.compare(20, 10));
         System.out.println(comparator.compare(20, 20));

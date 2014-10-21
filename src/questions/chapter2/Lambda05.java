@@ -8,6 +8,7 @@ public class Lambda05 {
 
     public Lambda05() {
         test();
+        answer();
     }
     
     private void test() {
@@ -33,6 +34,18 @@ public class Lambda05 {
                              }
                          }
                 );
+        System.out.println(smallNumbers);
+    }
+    
+    private void answer() {
+        List<Integer> numbers = makeList();
+
+        List<Integer> bigNumbers
+                = filterList(numbers, t -> t > 10);
+        System.out.println(bigNumbers);
+
+        List<Integer> smallNumbers
+                = filterList(numbers, t -> t < 10);
         System.out.println(smallNumbers);
     }
 

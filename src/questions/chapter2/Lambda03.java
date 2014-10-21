@@ -12,6 +12,7 @@ public class Lambda03 {
 
     public Lambda03() {
         test();
+        answer();
     }
     
     private void test() {
@@ -25,6 +26,23 @@ public class Lambda03 {
                 } catch (IOException ex) {
                     System.err.println("Fail Read.");
                 }
+            }
+        };
+        
+        ExecutorService service = Executors.newFixedThreadPool(1);
+        
+        service.submit(task);
+        service.shutdown();
+    }
+    
+    private void answer() {
+        Runnable task = () -> {
+            try {
+                Path path = Paths.get("README.md");
+                List<String> contents =  Files.readAllLines(path);
+                System.out.println(contents);
+            } catch (IOException ex) {
+                System.err.println("Fail Read.");
             }
         };
         

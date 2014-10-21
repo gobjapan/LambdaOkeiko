@@ -6,6 +6,7 @@ public class Lambda04 {
 
     public Lambda04() {
         test();
+        answer();
     }
     
     private void test() {
@@ -15,6 +16,15 @@ public class Lambda04 {
                 return Integer.valueOf(x);
             }
         };
+        
+        System.out.println(function.apply("0"));
+        System.out.println(function.apply("10"));
+        System.out.println(function.apply("-10"));
+    }
+    
+    private void answer() {
+        //Function<String, Integer> function = x -> Integer.valueOf(x);
+        Function<String, Integer> function = Integer::valueOf;
         
         System.out.println(function.apply("0"));
         System.out.println(function.apply("10"));
