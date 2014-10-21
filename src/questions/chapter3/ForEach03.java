@@ -9,6 +9,13 @@ public class ForEach03 {
         List<String> texts = Arrays.asList("Java", "jAva", "jaVa", "JAVA", "javA");
                 
         printList(texts);
+        printList_answer(texts);
+    }
+    
+    private void printList_answer(List<String> texts) {
+        texts.stream()
+            .map(text -> text.toLowerCase())
+            .forEach(System.out::println);
     }
     
     private void printList(List<String> texts) {

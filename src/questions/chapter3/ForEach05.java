@@ -17,6 +17,16 @@ public class ForEach05 {
                 "Peter Piper picked?");
                 
         splitWords(texts);
+        splitWords_answer(texts);
+    }
+    
+    private void splitWords_answer(List<String> texts) {
+        texts.stream()
+                .flatMap(text -> Arrays.stream(text.split(" |\\.|\\,|\\?")))
+                .forEach(System.out::println);
+        
+        texts.stream()
+                .forEach(System.out::println);
     }
     
     private void splitWords(List<String> texts) {

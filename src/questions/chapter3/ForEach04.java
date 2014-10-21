@@ -9,6 +9,14 @@ public class ForEach04 {
         List<String> texts = Arrays.asList("Java", "JavaScript", "Ruby", "Pearl", "PHP", "Scala", "Groovy");
                 
         printList(texts);
+        printList_answer(texts);
+    }
+    
+    private void printList_answer(List<String> texts) {
+        texts.stream()
+                .map(text -> text.toLowerCase())
+                .filter(text -> text.startsWith("j"))
+                .forEach(System.out::println);
     }
     
     private void printList(List<String> texts) {
